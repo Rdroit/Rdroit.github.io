@@ -389,15 +389,9 @@ We will cover other basics on the next sections.</p>
 <h3>Installing and configuring Cyberduck<a href="index.html#installing-and-configuring-cyberduck" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In order to access remote files (for example opening a pdf file), you will need to install an additional tool, called cyberduck (<a href="https://cyberduck.io/" class="uri">https://cyberduck.io/</a>).</p>
 <ul>
-<li><ol style="list-style-type: decimal">
 <li>Install Cyberduck according to your operating system</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: decimal">
 <li>Once installed, open Cyberduck</li>
-</ol></li>
-<li><ol start="3" style="list-style-type: decimal">
 <li>On the top left, click on Neue Verbindung(or new connection)</li>
-</ol></li>
 </ul>
 <p>In the new window, make the following changes:</p>
 <ul>
@@ -407,6 +401,7 @@ We will cover other basics on the next sections.</p>
 <li>in Benutzername (or Username), type your username (like user1)</li>
 <li>password box: gkBio%!</li>
 </ul>
+<p>Click on Verbinden (or Connect)</p>
 </div>
 </div>
 <div id="good-practice" class="section level2 unnumbered hasAnchor">
@@ -566,16 +561,16 @@ Therefore, we can use the function <code>min()</code>.</p>
 <span id="cb22-2"><a href="index.html#cb22-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>)   <span class="co"># generate 30 random numbers for the matrix</span></span>
 <span id="cb22-3"><a href="index.html#cb22-3" aria-hidden="true" tabindex="-1"></a>Mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> m, <span class="at">nrow =</span> <span class="dv">6</span>)</span>
 <span id="cb22-4"><a href="index.html#cb22-4" aria-hidden="true" tabindex="-1"></a>Mat</span></code></pre></div>
-<pre><code>##            [,1]       [,2]        [,3]       [,4]        [,5]
-## [1,] -0.3875414 -0.9675149  1.13628839  2.2201579 -0.57989302
-## [2,] -0.3420053 -0.4297645  1.91946831 -1.0234739 -2.18051333
-## [3,] -0.4692286  0.1550717 -0.49625659 -0.7590248 -0.05668736
-## [4,] -1.1995447  1.0530270  0.24260577 -1.0266500  0.82746322
-## [5,] -1.0465053 -0.3995701  0.07655404  0.1051989 -0.47142097
-## [6,]  0.1577957 -0.9279706 -0.45635762 -2.3016051 -0.64929013</code></pre>
+<pre><code>##            [,1]       [,2]        [,3]         [,4]       [,5]
+## [1,] -0.7427692  1.5947750  0.61745891  1.681167680  0.8173080
+## [2,] -0.1153872  0.6360719  0.05701226  0.298119115 -1.2604953
+## [3,] -1.3564737  1.2796540 -1.83916191 -0.030353855  0.3826853
+## [4,] -0.6813860  0.7650710 -1.29830136  0.267923536 -0.5116566
+## [5,]  0.2593643 -1.7097852  1.80076606 -1.664235875 -0.5699220
+## [6,] -1.3036538 -1.6798220 -1.73868150 -0.004404795  0.2325298</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="index.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Next, we want to determine the minimum value of each row: </span></span>
 <span id="cb24-2"><a href="index.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(Mat, <span class="dv">1</span>, min)</span></code></pre></div>
-<pre><code>## [1] -0.9675149 -2.1805133 -0.7590248 -1.1995447 -1.0465053 -2.3016051</code></pre>
+<pre><code>## [1] -0.7427692 -1.2604953 -1.8391619 -1.2983014 -1.7097852 -1.7386815</code></pre>
 <blockquote>
 <p>What happens if you change the “1” in the apply function to “2”?
 Try it!</p>
@@ -601,15 +596,15 @@ which function do we want to apply to each element of this vector?<br />
 <pre><code>## [1]  2  4  6  8 10</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="index.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply()</span></span>
 <span id="cb30-2"><a href="index.html#cb30-2" aria-hidden="true" tabindex="-1"></a>Mat </span></code></pre></div>
-<pre><code>##            [,1]       [,2]        [,3]       [,4]        [,5]
-## [1,] -0.3875414 -0.9675149  1.13628839  2.2201579 -0.57989302
-## [2,] -0.3420053 -0.4297645  1.91946831 -1.0234739 -2.18051333
-## [3,] -0.4692286  0.1550717 -0.49625659 -0.7590248 -0.05668736
-## [4,] -1.1995447  1.0530270  0.24260577 -1.0266500  0.82746322
-## [5,] -1.0465053 -0.3995701  0.07655404  0.1051989 -0.47142097
-## [6,]  0.1577957 -0.9279706 -0.45635762 -2.3016051 -0.64929013</code></pre>
+<pre><code>##            [,1]       [,2]        [,3]         [,4]       [,5]
+## [1,] -0.7427692  1.5947750  0.61745891  1.681167680  0.8173080
+## [2,] -0.1153872  0.6360719  0.05701226  0.298119115 -1.2604953
+## [3,] -1.3564737  1.2796540 -1.83916191 -0.030353855  0.3826853
+## [4,] -0.6813860  0.7650710 -1.29830136  0.267923536 -0.5116566
+## [5,]  0.2593643 -1.7097852  1.80076606 -1.664235875 -0.5699220
+## [6,] -1.3036538 -1.6798220 -1.73868150 -0.004404795  0.2325298</code></pre>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="index.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(Mat, <span class="dv">1</span>, <span class="cf">function</span>(x) {<span class="fu">sum</span>(x<span class="sc">*</span><span class="dv">2</span>)}) <span class="co">#the operation is performed on every row of &quot;Mat&quot;; every element is multiplied by two and the sum of the row is calculated</span></span></code></pre></div>
-<pre><code>## [1]  2.8429939 -4.1125774 -3.2522513 -0.2061976 -3.4714870 -8.3548554</code></pre>
+<pre><code>## [1]  7.9358808 -0.7693584 -3.1273003 -2.9166988 -3.7676254 -8.9880645</code></pre>
 <p>Besides, we can use <code>sapply()</code> for a <strong>list</strong>, for example to calculate the length of every element using <code>length()</code>:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="index.html#cb34-1" aria-hidden="true" tabindex="-1"></a>List1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">state =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>))</span>
 <span id="cb34-2"><a href="index.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
