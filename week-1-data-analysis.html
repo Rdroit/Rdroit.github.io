@@ -598,7 +598,7 @@ Remember, 1 row = 1 patient.</p>
 <span id="cb105-3"><a href="week-1-data-analysis.html#cb105-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
 <span id="cb105-4"><a href="week-1-data-analysis.html#cb105-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Stabilized Glucose concentration in blood&quot;</span>,  <span class="co"># add labels to the x-axis</span></span>
 <span id="cb105-5"><a href="week-1-data-analysis.html#cb105-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Glucose concentration&quot;</span>)                  <span class="co"># add title</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-47-1.png" width="672" /></p>
 <blockquote>
 <p>Add the parameter <code>bins = 50</code> in the above lines of code (inside <code>geom_histogram</code>) and see what happens.
 Try different values for <code>bins</code> like <code>10, 20, 75, 100</code>. Can you interpret the differences?
@@ -613,7 +613,7 @@ Is this a good or bad thing about histograms?</p>
 <span id="cb106-3"><a href="week-1-data-analysis.html#cb106-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
 <span id="cb106-4"><a href="week-1-data-analysis.html#cb106-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Stabilized Glucose concentration in blood&quot;</span>,  <span class="co"># add labels to the x-axis</span></span>
 <span id="cb106-5"><a href="week-1-data-analysis.html#cb106-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Glucose concentration&quot;</span>)                  <span class="co"># add title</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 </div>
 <div id="boxplots" class="section level4 hasAnchor">
 <h4>Boxplots<a href="week-1-data-analysis.html#boxplots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -622,7 +622,7 @@ Is this a good or bad thing about histograms?</p>
 <span id="cb107-2"><a href="week-1-data-analysis.html#cb107-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> stab.glu)) <span class="sc">+</span></span>
 <span id="cb107-3"><a href="week-1-data-analysis.html#cb107-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb107-4"><a href="week-1-data-analysis.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span><span class="st">&quot;Stabilized Glucose concentration in blood&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-49-1.png" width="384" /></p>
+<p><img src="figure-html/unnamed-chunk-49-1.png" width="384" /></p>
 <blockquote>
 <p>Can you explain all features of this graph, such as upper/lower whisker, 25% quantile, …?</p>
 </blockquote>
@@ -635,18 +635,18 @@ Is this a good or bad thing about histograms?</p>
 <span id="cb108-2"><a href="week-1-data-analysis.html#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
 <span id="cb108-3"><a href="week-1-data-analysis.html#cb108-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> bp<span class="fl">.1</span>s)) <span class="sc">+</span></span>
 <span id="cb108-4"><a href="week-1-data-analysis.html#cb108-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>Now we can use the function <code>geom_qq()</code> to generate the <strong>QQ-plot</strong> of this distribution against the standard normal distribution:</p>
 <div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="week-1-data-analysis.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
 <span id="cb109-2"><a href="week-1-data-analysis.html#cb109-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">sample =</span> bp<span class="fl">.1</span>s)) <span class="sc">+</span>     <span class="co"># we use sample= inside aes for the QQ-plot</span></span>
 <span id="cb109-3"><a href="week-1-data-analysis.html#cb109-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>()                       <span class="co"># creates the QQ-plot</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-51-1.png" width="288" /></p>
+<p><img src="figure-html/unnamed-chunk-51-1.png" width="288" /></p>
 <p>Using the additional command <code>geom_qq_line()</code>, we can add a straight line that goes through the first and third quartile:</p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="week-1-data-analysis.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
 <span id="cb110-2"><a href="week-1-data-analysis.html#cb110-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">sample =</span> bp<span class="fl">.1</span>s)) <span class="sc">+</span>     <span class="co"># we use sample= inside aes for the QQ-plot</span></span>
 <span id="cb110-3"><a href="week-1-data-analysis.html#cb110-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span></span>
 <span id="cb110-4"><a href="week-1-data-analysis.html#cb110-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>)                  <span class="co"># adds in the QQ-line on top</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-52-1.png" width="288" /></p>
+<p><img src="figure-html/unnamed-chunk-52-1.png" width="288" /></p>
 <blockquote>
 <p>So, is the distribution normal??</p>
 </blockquote>
@@ -671,7 +671,7 @@ Is this a good or bad thing about histograms?</p>
 <span id="cb111-17"><a href="week-1-data-analysis.html#cb111-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb111-18"><a href="week-1-data-analysis.html#cb111-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> q.male, <span class="at">y =</span> q.female)) <span class="sc">+</span></span>
 <span id="cb111-19"><a href="week-1-data-analysis.html#cb111-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Quantiles&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Male quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Female quantiles&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-53-1.png" width="288" /></p>
+<p><img src="figure-html/unnamed-chunk-53-1.png" width="288" /></p>
 <hr />
 </div>
 </div>
@@ -697,7 +697,7 @@ We have already seen that the <code>summary()</code> and <code>quantile()</code>
 <span id="cb113-2"><a href="week-1-data-analysis.html#cb113-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> stab.glu, <span class="at">y =</span> glyhb)) <span class="sc">+</span></span>
 <span id="cb113-3"><a href="week-1-data-analysis.html#cb113-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb113-4"><a href="week-1-data-analysis.html#cb113-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;Stabilized glucose&#39;</span>, <span class="at">y=</span><span class="st">&#39;Glycosylated hemoglobin&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <blockquote>
 <p>Do you suspect that the two variables have a relationship? Do the scatter plot for other pairs of numerical variables!</p>
 </blockquote>
@@ -713,7 +713,7 @@ We have already seen that the <code>summary()</code> and <code>quantile()</code>
 <span id="cb118-2"><a href="week-1-data-analysis.html#cb118-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">rank</span>(stab.glu), <span class="at">y =</span> <span class="fu">rank</span>(glyhb))) <span class="sc">+</span></span>
 <span id="cb118-3"><a href="week-1-data-analysis.html#cb118-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb118-4"><a href="week-1-data-analysis.html#cb118-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;Rank - Stabilized glucose&#39;</span>, <span class="at">y=</span><span class="st">&#39;Rank - Glycosylated hemoglobin&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p>Do you understand the usage of ranks here? Run `rank()`` on a vector like <em>c(3,5,10,1,23)</em> to see how the output looks like.</p>
 <blockquote>
 <p>Associations are among the simplest forms of structure in the data! It is important to remember that <em>Association does not imply correlation</em> and <em>Correlation does not imply causation</em>. Take a look at this page to view few common logical fallacies. <a href="https://en.wikipedia.org/wiki/Fallacy">see here</a></p>
@@ -821,14 +821,14 @@ What can you tell from the differences in these values?</p></li>
 <span id="cb132-8"><a href="week-1-data-analysis.html#cb132-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> expression)) <span class="sc">+</span></span>
 <span id="cb132-9"><a href="week-1-data-analysis.html#cb132-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
 <span id="cb132-10"><a href="week-1-data-analysis.html#cb132-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Transformed data&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <p>Compare to the density plot before these pre-processing steps using the same strategy.</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="week-1-data-analysis.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(brca.exp.original, <span class="at">rownames =</span> <span class="cn">NA</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb133-2"><a href="week-1-data-analysis.html#cb133-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;sample&quot;</span>, <span class="at">value =</span> <span class="st">&quot;expression&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb133-3"><a href="week-1-data-analysis.html#cb133-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> expression)) <span class="sc">+</span></span>
 <span id="cb133-4"><a href="week-1-data-analysis.html#cb133-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
 <span id="cb133-5"><a href="week-1-data-analysis.html#cb133-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Untransformed data&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 <hr />
 </div>
 </div>
@@ -896,7 +896,7 @@ We can test a simple scenario before. Check how the output of this simple loop l
 <span id="cb141-12"><a href="week-1-data-analysis.html#cb141-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> k_to_test, <span class="at">y =</span> km_wws)) <span class="sc">+</span></span>
 <span id="cb141-13"><a href="week-1-data-analysis.html#cb141-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;Number of clusters K&quot;</span>,</span>
 <span id="cb141-14"><a href="week-1-data-analysis.html#cb141-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">&quot;Total within-clusters sum of squares&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <blockquote>
 <p>Do you see an obvious “elbow” or “kink” in the curve?? Another criteria for the quality of the clustering is the <strong>silhouette</strong> method.</p>
 </blockquote>
@@ -915,7 +915,7 @@ We can test a simple scenario before. Check how the output of this simple loop l
 <span id="cb146-3"><a href="week-1-data-analysis.html#cb146-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb146-4"><a href="week-1-data-analysis.html#cb146-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let us use the basic R function plot() to see the results</span></span>
 <span id="cb146-5"><a href="week-1-data-analysis.html#cb146-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(s)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-74-1.png" width="672" /></p>
 <hr />
 </div>
 </div>
@@ -963,7 +963,7 @@ We can test a simple scenario before. Check how the output of this simple loop l
 <span id="cb153-2"><a href="week-1-data-analysis.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pheatmap</span>(brca.exp.highvar.cor, </span>
 <span id="cb153-3"><a href="week-1-data-analysis.html#cb153-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show_rownames =</span> <span class="cn">FALSE</span>, </span>
 <span id="cb153-4"><a href="week-1-data-analysis.html#cb153-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">show_colnames =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-79-1.png" width="672" /></p>
 <p>Each cell of this heatmap represents the correlation value between the sample in the row and the sample in the column. The correlation of a sample to itself is always 1 (red diagonal).</p>
 <p>The function automatically determines the clustering trees of the rows and columns (which are identical, since the correlation matrix is symmetrical!)</p>
 </div>
@@ -976,7 +976,7 @@ We can now plot again the heatmap, using the annotation dataframe to add additio
 <span id="cb154-2"><a href="week-1-data-analysis.html#cb154-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">annotation_row =</span> brca.anno,</span>
 <span id="cb154-3"><a href="week-1-data-analysis.html#cb154-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show_rownames =</span> <span class="cn">FALSE</span>, </span>
 <span id="cb154-4"><a href="week-1-data-analysis.html#cb154-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">show_colnames =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-80-1.png" width="768" /></p>
+<p><img src="figure-html/unnamed-chunk-80-1.png" width="768" /></p>
 <blockquote>
 <p>How would you interpret this dendrogram? Do the clusters you observe make any sense? What are the parameters by which the samples cluster together? How many meaningful clusters can you observe? Do you see any relation between the distribution of the data and your clusters ?</p>
 </blockquote>
@@ -1035,7 +1035,7 @@ We can now plot again the heatmap, using the annotation dataframe to add additio
 <span id="cb159-9"><a href="week-1-data-analysis.html#cb159-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> PCs, <span class="at">y =</span> proportion)) <span class="sc">+</span></span>
 <span id="cb159-10"><a href="week-1-data-analysis.html#cb159-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span>                               <span class="co"># to make the barplot</span></span>
 <span id="cb159-11"><a href="week-1-data-analysis.html#cb159-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Proportion of variance&#39;</span>)           <span class="co"># we only plot the first 20 PCs</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-83-1.png" width="672" /></p>
 <p>Principal component analysis represents each data point (here: patient) in a new space in which the coordinates are principal components. Check the following output:</p>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="week-1-data-analysis.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pca<span class="sc">$</span>x)</span></code></pre></div>
 <p>We can now display the data points (i.e. patients) in the first two principal components. In addition, we can color the dots according to certain clinical parameters:</p>
@@ -1048,7 +1048,7 @@ We can now plot again the heatmap, using the annotation dataframe to add additio
 <span id="cb161-7"><a href="week-1-data-analysis.html#cb161-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> PC1, <span class="at">y =</span> PC2, <span class="at">colour =</span> ER_status)) <span class="sc">+</span></span>
 <span id="cb161-8"><a href="week-1-data-analysis.html#cb161-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb161-9"><a href="week-1-data-analysis.html#cb161-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;navy&quot;</span>)) <span class="co"># scale_colour_manual can be used to change colours</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-85-1.png" width="576" /></p>
+<p><img src="figure-html/unnamed-chunk-85-1.png" width="576" /></p>
 <blockquote>
 <p>Choose different PCs for this plot. Can you still observe the two clusters corresponding to the ER_status of the patients?</p>
 </blockquote>
@@ -1179,7 +1179,7 @@ What is the probability that someone is smaller than 1.60m?</p>
 <span id="cb190-6"><a href="week-1-data-analysis.html#cb190-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
 <span id="cb190-7"><a href="week-1-data-analysis.html#cb190-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="fl">1.6</span>, <span class="fl">1.9</span>),</span>
 <span id="cb190-8"><a href="week-1-data-analysis.html#cb190-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">&#39;dashed&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-92-1.png" width="672" /></p>
 <p>Let’s finally look at <strong>r- like random</strong> functions. These, unlike the others, don’t return single probabilities or values but rather generate a random distribution of values. We can use this to generate a normal distribution with mean = 10, sd = 5.</p>
 <div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="week-1-data-analysis.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="do">## normal distribution</span></span>
 <span id="cb191-2"><a href="week-1-data-analysis.html#cb191-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">1000</span>,<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="dv">5</span>)</span>
@@ -1188,7 +1188,7 @@ What is the probability that someone is smaller than 1.60m?</p>
 <span id="cb191-5"><a href="week-1-data-analysis.html#cb191-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>x), <span class="at">bins =</span> <span class="dv">20</span>,</span>
 <span id="cb191-6"><a href="week-1-data-analysis.html#cb191-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;orange&quot;</span>) <span class="sc">+</span></span>
 <span id="cb191-7"><a href="week-1-data-analysis.html#cb191-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-93-1.png" width="576" /></p>
+<p><img src="figure-html/unnamed-chunk-93-1.png" width="576" /></p>
 <blockquote>
 <p>Can you generate a Poisson distribution and a binomial distribution?</p>
 </blockquote>
@@ -1227,7 +1227,7 @@ What is the probability that someone is smaller than 1.60m?</p>
 <span id="cb192-20"><a href="week-1-data-analysis.html#cb192-20" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> Specs)) <span class="sc">+</span></span>
 <span id="cb192-21"><a href="week-1-data-analysis.html#cb192-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span> </span>
 <span id="cb192-22"><a href="week-1-data-analysis.html#cb192-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_freqpoly</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="co"># geom_freqpoly adds in the line on top of the histogram</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 <blockquote>
 <p>Play with the mean and sd parameters and visualize the distributions (plain lines) as well as the corresponding histograms.</p>
 </blockquote>
@@ -1269,7 +1269,7 @@ We assume that the population mean and standard deviation is similar as calculat
 <span id="cb199-3"><a href="week-1-data-analysis.html#cb199-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> TP53_expression)) <span class="sc">+</span></span>
 <span id="cb199-4"><a href="week-1-data-analysis.html#cb199-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span> </span>
 <span id="cb199-5"><a href="week-1-data-analysis.html#cb199-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">1500</span>, <span class="dv">6000</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-97-1.png" width="672" /></p>
 <p>Make a normal distribution with the above parameters</p>
 <div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="week-1-data-analysis.html#cb200-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5000</span>,<span class="at">by=</span><span class="dv">5</span>)</span>
 <span id="cb200-2"><a href="week-1-data-analysis.html#cb200-2" aria-hidden="true" tabindex="-1"></a>d.pred <span class="ot">=</span> <span class="fu">dnorm</span>(x, <span class="at">mean =</span> m.tp53, <span class="at">sd =</span> s.tp53)</span>
@@ -1284,7 +1284,7 @@ We assume that the population mean and standard deviation is similar as calculat
 <span id="cb200-11"><a href="week-1-data-analysis.html#cb200-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(<span class="fu">qnorm</span>(<span class="at">p =</span> <span class="fl">0.1</span>, <span class="at">mean =</span> m.tp53, <span class="at">sd =</span> s.tp53), </span>
 <span id="cb200-12"><a href="week-1-data-analysis.html#cb200-12" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">qnorm</span>(<span class="at">p =</span> <span class="fl">0.9</span>, <span class="at">mean =</span> m.tp53, <span class="at">sd =</span> s.tp53)),</span>
 <span id="cb200-13"><a href="week-1-data-analysis.html#cb200-13" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">&#39;red&#39;</span>, <span class="at">linetype =</span> <span class="st">&#39;dotted&#39;</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-98-1.png" width="672" /></p>
 </div>
 <div id="data-prediction-using-the-normal-distribution-model" class="section level5 hasAnchor">
 <h5>Data prediction using the normal distribution model<a href="week-1-data-analysis.html#data-prediction-using-the-normal-distribution-model" class="anchor-section" aria-label="Anchor link to header"></a></h5>
@@ -1356,7 +1356,7 @@ We assume that the population mean and standard deviation is similar as calculat
 <span id="cb219-8"><a href="week-1-data-analysis.html#cb219-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> d.pred),</span>
 <span id="cb219-9"><a href="week-1-data-analysis.html#cb219-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
 <span id="cb219-10"><a href="week-1-data-analysis.html#cb219-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> tp53.exp<span class="sc">$</span>TP53_expression)) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-106-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-106-1.png" width="672" /></p>
 <p>Compare the black and red vertical lines (real vs predicted).</p>
 <blockquote>
 <p>Re-execute the code above with <code>p=0.25, p=0.5, p=0.75 etc</code> and check how good the predictions are.</p>
@@ -1378,7 +1378,7 @@ We assume that the population mean and standard deviation is similar as calculat
 <span id="cb220-11"><a href="week-1-data-analysis.html#cb220-11" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">sample =</span> TP53_expression)) <span class="sc">+</span></span>
 <span id="cb220-12"><a href="week-1-data-analysis.html#cb220-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span></span>
 <span id="cb220-13"><a href="week-1-data-analysis.html#cb220-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-107-1.png" width="480" /></p>
+<p><img src="figure-html/unnamed-chunk-107-1.png" width="480" /></p>
 <div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="week-1-data-analysis.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Would be the same as:</span></span>
 <span id="cb221-2"><a href="week-1-data-analysis.html#cb221-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot() +</span></span>
 <span id="cb221-3"><a href="week-1-data-analysis.html#cb221-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_point(aes(x = q.theoretical, </span></span>
@@ -1480,7 +1480,7 @@ Then, we <code>lapply(v, function(i))</code>:
 <span id="cb230-20"><a href="week-1-data-analysis.html#cb230-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Mean values&quot;</span>,</span>
 <span id="cb230-21"><a href="week-1-data-analysis.html#cb230-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Mean values and confidence intervals, N=&quot;</span>,N),</span>
 <span id="cb230-22"><a href="week-1-data-analysis.html#cb230-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;95% CI Status&quot;</span>) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-114-1.png" width="768" /></p>
+<p><img src="figure-html/unnamed-chunk-114-1.png" width="768" /></p>
 <p>Here, the orange/grey bars represent the confidence interval, the dot is the mean of the sample values, and the dotted line at <code>\lambda</code> represents the true expectation value. Whenever the true expectation value is within the CI, the bar is orange, if not, the bar is grey. How often is the true expectation value outside the CI? Count the grey bars!</p>
 <p>It happens 7 times, which fits pretty well with the expected 5%.</p>
 <blockquote>
@@ -1575,7 +1575,7 @@ In addition, we want to learn how to use and interpret hypothesis tests.</p>
 <span id="cb235-2"><a href="week-1-data-analysis.html#cb235-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> weight, </span>
 <span id="cb235-3"><a href="week-1-data-analysis.html#cb235-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
 <span id="cb235-4"><a href="week-1-data-analysis.html#cb235-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-118-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-118-1.png" width="672" /></p>
 <p>The distributions look different in shape, right? Where do you think the mean would be located in the plot?</p>
 <div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="week-1-data-analysis.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use &quot;filter()&quot; to filter the cholesterol values for men and women</span></span>
 <span id="cb236-2"><a href="week-1-data-analysis.html#cb236-2" aria-hidden="true" tabindex="-1"></a>dat.male <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
@@ -1594,7 +1594,7 @@ In addition, we want to learn how to use and interpret hypothesis tests.</p>
 <span id="cb237-4"><a href="week-1-data-analysis.html#cb237-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb237-5"><a href="week-1-data-analysis.html#cb237-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean.men, <span class="at">colour =</span> <span class="st">&quot;cyan&quot;</span>) <span class="sc">+</span></span>
 <span id="cb237-6"><a href="week-1-data-analysis.html#cb237-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean.women, <span class="at">colour =</span> <span class="st">&quot;salmon&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-120-1.png" width="672" /></p>
 <blockquote>
 <p>Do you think that the mean of the male weight is lower than 180?
 Do you think that the mean of the female weight is <strong>really</strong> different from the mean of the male weights?
@@ -1702,7 +1702,7 @@ This can be tested using a <em>two-sample and two.tailed</em> t.test.</p>
 <span id="cb243-4"><a href="week-1-data-analysis.html#cb243-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb243-5"><a href="week-1-data-analysis.html#cb243-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean.men, <span class="at">colour =</span> <span class="st">&quot;cyan&quot;</span>) <span class="sc">+</span></span>
 <span id="cb243-6"><a href="week-1-data-analysis.html#cb243-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mean.women, <span class="at">colour =</span> <span class="st">&quot;salmon&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 <p>The hypotheses can be formulated as:</p>
 <ul>
 <li><p>H0: the expectation value of the random variable “Weight of male patients” is <strong>equal</strong> to the expectation value of the random variable “Weight of female patients”.<br />
@@ -1766,10 +1766,10 @@ What is the relation between these two values?</p>
 <p>This can be visualized using the t-distribution.
 Here (see above result of the t.test), <em>t = 1.8453</em> and <em>df = 372.45</em>.</p>
 <p>In the <strong>one-tailed t.test</strong>, the p-value is the area under the curve for t &gt; 1.8453 (alternative greater) <strong>OR</strong> for t &lt; -1.8453 (alternative less).</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-128-1.png" width="480" /></p>
+<p><img src="figure-html/unnamed-chunk-128-1.png" width="480" /></p>
 <p>In the <strong>two-tailed t.test</strong>, the p-value is the area under the curve for t &gt; 1.8453 (alternative greater) <strong>AND</strong> for t &lt; -1.8453 (alternative less).
 It is two times the p-value of the one-sided t.test!</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-129-1.png" width="480" /></p>
+<p><img src="figure-html/unnamed-chunk-129-1.png" width="480" /></p>
 <p>IMPORTANTLY, a t-test can only be performed if the data is <strong>normally distributed</strong>!
 If the data is not normally distributed, you will need to use a non-parametric test, like Wilcoxon test.</p>
 <hr />
@@ -1795,13 +1795,13 @@ Let us us see an example.</p>
 <span id="cb253-7"><a href="week-1-data-analysis.html#cb253-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(expression,</span>
 <span id="cb253-8"><a href="week-1-data-analysis.html#cb253-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> SOX4)) <span class="sc">+</span></span>
 <span id="cb253-9"><a href="week-1-data-analysis.html#cb253-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-131-1.png" width="528" /></p>
+<p><img src="figure-html/unnamed-chunk-131-1.png" width="528" /></p>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="week-1-data-analysis.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if it&#39;s normally distributed using a QQ-plot </span></span>
 <span id="cb254-2"><a href="week-1-data-analysis.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(expression,</span>
 <span id="cb254-3"><a href="week-1-data-analysis.html#cb254-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">sample =</span> SOX4)) <span class="sc">+</span></span>
 <span id="cb254-4"><a href="week-1-data-analysis.html#cb254-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>() <span class="sc">+</span></span>
 <span id="cb254-5"><a href="week-1-data-analysis.html#cb254-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>(<span class="at">colour =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-131-2.png" width="528" /></p>
+<p><img src="figure-html/unnamed-chunk-131-2.png" width="528" /></p>
 <p>This looks everything but normal!
 In that case, we cannot apply the t.test, but need to apply a <strong>non-parametric test</strong> called the <em>Wilcoxon test</em>.
 This test is performed not on the <em>values</em> (like the t-test) but on the <em>ranks</em> of these values (remember the difference between the Pearson’s and the Spearman’s correlations!)</p>
@@ -1989,7 +1989,7 @@ This works similarly to the <code>lapply</code>, but it can be used to <em>apply
 <li>Consider the following graph, formulate the hypotheses H0 and H1 and perform a (one-sided) t-test.
 Interpret the result using <span class="math inline">\(\alpha=0.05\)</span>.</li>
 </ol>
-<p><img src="_main_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-143-1.png" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Calculate the mean age of the men.</li>
 <li>Compare it to age = 50. Formulate the hypotheses H0 and H1 and perform a (one-sided) t-test. Interpret the result using <span class="math inline">\(\alpha=0.05\)</span>.</li>
@@ -2072,7 +2072,7 @@ The table below is a reminder of which errors can be made when testing hypothese
 ## [11] 7.333333e-06 5.333333e-02 7.368421e-01 8.000000e-02 2.222222e-02
 ## [16] 3.529412e-01 7.142857e-02 1.000000e-12 5.333333e-02 1.142857e-02</code></pre>
 <p>Check how the p-values change!</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-147-1.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-147-2.png" width="50%" /></p>
+<p><img src="figure-html/unnamed-chunk-147-1.png" width="50%" /><img src="figure-html/unnamed-chunk-147-2.png" width="50%" /></p>
 <blockquote>
 <p>How many genes change from being significant to non-significant? How does this impact your experiment?</p>
 </blockquote>
@@ -2122,7 +2122,7 @@ We will focus on predicting the <strong>cholesterol level</strong>.</p>
 <span id="cb287-5"><a href="week-1-data-analysis.html#cb287-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_cols =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb287-6"><a href="week-1-data-analysis.html#cb287-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb287-7"><a href="week-1-data-analysis.html#cb287-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">display_numbers =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-151-1.png" width="672" /></p>
 <blockquote>
 <p>What are the strongest correlations? Do they make sense?</p>
 </blockquote>
@@ -2181,18 +2181,18 @@ We will focus on predicting the <strong>cholesterol level</strong>.</p>
 <div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="week-1-data-analysis.html#cb294-1" aria-hidden="true" tabindex="-1"></a><span class="co"># normal distribution of residuals?</span></span>
 <span id="cb294-2"><a href="week-1-data-analysis.html#cb294-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb294-3"><a href="week-1-data-analysis.html#cb294-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> l.g<span class="sc">$</span>residuals)) </span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-154-1.png" width="384" /></p>
+<p><img src="figure-html/unnamed-chunk-154-1.png" width="384" /></p>
 <div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="week-1-data-analysis.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb295-2"><a href="week-1-data-analysis.html#cb295-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq</span>(<span class="fu">aes</span>(<span class="at">sample =</span> l.g<span class="sc">$</span>residuals)) <span class="sc">+</span></span>
 <span id="cb295-3"><a href="week-1-data-analysis.html#cb295-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>(<span class="fu">aes</span>(<span class="at">sample =</span> l.g<span class="sc">$</span>residuals),</span>
 <span id="cb295-4"><a href="week-1-data-analysis.html#cb295-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-154-2.png" width="384" /></p>
+<p><img src="figure-html/unnamed-chunk-154-2.png" width="384" /></p>
 <div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="week-1-data-analysis.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="do">## correlation residuals x-values?</span></span>
 <span id="cb296-2"><a href="week-1-data-analysis.html#cb296-2" aria-hidden="true" tabindex="-1"></a>corr.gly_resi <span class="ot">=</span> <span class="fu">cor</span>(dat<span class="sc">$</span>glyhb,l.g<span class="sc">$</span>residuals)</span>
 <span id="cb296-3"><a href="week-1-data-analysis.html#cb296-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb296-4"><a href="week-1-data-analysis.html#cb296-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb296-5"><a href="week-1-data-analysis.html#cb296-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> dat<span class="sc">$</span>glyhb, <span class="at">y =</span> l.g<span class="sc">$</span>residuals))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-154-3.png" width="384" /></p>
+<p><img src="figure-html/unnamed-chunk-154-3.png" width="384" /></p>
 <blockquote>
 <p>What is your overall opinion about the validity of the regression model here?</p>
 </blockquote>
@@ -2205,7 +2205,7 @@ We will focus on predicting the <strong>cholesterol level</strong>.</p>
 <span id="cb297-6"><a href="week-1-data-analysis.html#cb297-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Predicted values&#39;</span>) <span class="sc">+</span></span>
 <span id="cb297-7"><a href="week-1-data-analysis.html#cb297-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, </span>
 <span id="cb297-8"><a href="week-1-data-analysis.html#cb297-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-155-1.png" width="384" /></p>
+<p><img src="figure-html/unnamed-chunk-155-1.png" width="384" /></p>
 <p>Not really super convincing, right? Let’s put more information into the model!</p>
 </div>
 <div id="multiple-regression-model" class="section level4 hasAnchor">
@@ -2296,7 +2296,7 @@ We will focus on predicting the <strong>cholesterol level</strong>.</p>
 <span id="cb302-6"><a href="week-1-data-analysis.html#cb302-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&#39;Predicted values&#39;</span>) <span class="sc">+</span></span>
 <span id="cb302-7"><a href="week-1-data-analysis.html#cb302-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, </span>
 <span id="cb302-8"><a href="week-1-data-analysis.html#cb302-8" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&#39;red&#39;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-158-1.png" width="384" /></p>
+<p><img src="figure-html/unnamed-chunk-158-1.png" width="384" /></p>
 <p>Better? I would say so… To determine the accuracy, we can compute the so called <strong>root mean squared error (RMSE)</strong>:</p>
 <p><span class="math display">\[
 RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n (x_i-\hat{x_i})^2}
@@ -2395,7 +2395,7 @@ RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n (x_i-\hat{x_i})^2}
 <span id="cb313-35"><a href="week-1-data-analysis.html#cb313-35" aria-hidden="true" tabindex="-1"></a>                      <span class="at">values =</span><span class="fu">c</span>(<span class="st">&#39;gold&#39;</span><span class="ot">=</span><span class="st">&#39;gold&#39;</span>,<span class="st">&#39;steelblue&#39;</span><span class="ot">=</span><span class="st">&#39;steelblue&#39;</span>), </span>
 <span id="cb313-36"><a href="week-1-data-analysis.html#cb313-36" aria-hidden="true" tabindex="-1"></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&#39;train&#39;</span>,<span class="st">&#39;test&#39;</span>)) <span class="sc">+</span></span>
 <span id="cb313-37"><a href="week-1-data-analysis.html#cb313-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Iteration&quot;</span>, <span class="at">y =</span> <span class="st">&quot;RMSE values&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
+<p><img src="figure-html/unnamed-chunk-165-1.png" width="672" /></p>
 
 </div>
 </div>
